@@ -143,7 +143,7 @@ try:
 except cryptography.exceptions.InvalidSignature:
 	print "[" + colorama.Fore.RED + "Failed" + colorama.Fore.RESET + "]"
 
-# Verify with public key
+# Verify the signature with public key
 pubKey = create_string_buffer(150)
 lenPubKey = c_uint(150)
 
@@ -158,7 +158,7 @@ invoke(
 
 
 
-# Verify the signature with KEY
+# Verify the signature with Cert using key
 invoke(
 	"Verify signature with KEY",
 	lib.SpcVerifySignData,
